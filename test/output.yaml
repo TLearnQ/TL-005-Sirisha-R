@@ -1,0 +1,18 @@
+age: 22
+education:
+  cgpa: 8.71
+  college: AMC Engineering College
+  degree: B.E Computer Science (AIML)
+name: Sirisha
+projects:
+- title: Real-Time Distress Signal Recognition
+  type: AI/ML
+  year: 2025
+- title: Text-to-Image GAN
+  type: Deep Learning
+  year: 2024
+skills:
+- Python
+- HTML
+- CSS
+- Linux
