@@ -41,17 +41,18 @@ with open("summary.json", "w") as f:
 
 
 analysis = f"""
-API Summary Report:
+3ggAPI Summary Report:
 Total endpoints parsed: {total_endpoints}
 HTTP method distribution: {dict(method_counter)}
 Authentication methods used: {list(auth_methods)}
 Endpoints with documented responses: {endpoints_with_resp}
 Endpoints missing responses: {endpoints_missing_resp}
 Response codes encountered: {list(response_codes)}
-Coverage: {coverage:.2f}%
+
 """
 
 with open("README.md", "w") as f:
     f.write(analysis)
 
 print("summary.json and README.md generated successfully!")
+
