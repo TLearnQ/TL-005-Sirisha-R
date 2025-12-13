@@ -1,0 +1,317 @@
+{
+  "TS26512_M1_ContentProtocolsDiscovery.yaml": {},
+  "TS29511_N5g-eir_EquipmentIdentityCheck.yaml": {
+    "title": "5G-EIR Equipment Identity Check",
+    "version": "1.4.0-alpha.1",
+    "description": "5G-EIR Equipment Identity Check Service.  \n\u00a9 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+    "servers": [
+      "{apiRoot}/n5g-eir-eic/v1"
+    ],
+    "tags": [],
+    "paths": {
+      "/equipment-status": {
+        "get": {
+          "summary": "Retrieves the status of the UE",
+          "parameters": [
+            {
+              "name": "pei",
+              "in": "query",
+              "description": "PEI of the UE",
+              "required": true,
+              "schema": {
+                "$ref": "TS29571_CommonData.yaml#/components/schemas/Pei"
+              }
+            },
+            {
+              "name": "supi",
+              "in": "query",
+              "description": "SUPI of the UE",
+              "required": false,
+              "schema": {
+                "$ref": "TS29571_CommonData.yaml#/components/schemas/Supi"
+              }
+            },
+            {
+              "name": "gpsi",
+              "in": "query",
+              "description": "GPSI of the UE",
+              "required": false,
+              "schema": {
+                "$ref": "TS29571_CommonData.yaml#/components/schemas/Gpsi"
+              }
+            },
+            {
+              "name": "supported-features",
+              "in": "query",
+              "description": "supported features of the NF consumer",
+              "schema": {
+                "$ref": "TS29571_CommonData.yaml#/components/schemas/SupportedFeatures"
+              }
+            }
+          ],
+          "requestBody": false,
+          "responses": {
+            "200": {
+              "$ref": "#/components/schemas/EirResponseData"
+            },
+            "307": null,
+            "308": null,
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": {
+              "$ref": "TS29571_CommonData.yaml#/components/schemas/ProblemDetails"
+            },
+            "406": null,
+            "414": null,
+            "429": null,
+            "500": null,
+            "502": null,
+            "503": null,
+            "default": null
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oAuth2ClientCredentials": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "{nrfApiRoot}/oauth2/token",
+            "scopes": {
+              "n5g-eir-eic": "Access to the N5g-eir_EquipmentIdentityCheck API"
+            }
+          }
+        }
+      }
+    }
+  },
+  "TS29538_MSGG_N3GDelivery.yaml": {
+    "title": "MSGG_N3GDelivery",
+    "version": "1.2.0-alpha.1",
+    "description": "API for MSGG N3G Message Delivery Service.  \n\u00a9 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+    "servers": [
+      "{apiRoot}/msgg-n3gdelivery/v1"
+    ],
+    "tags": [],
+    "paths": {
+      "/deliver-message": {
+        "post": {
+          "summary": "deliver message to NON-3GPP Message Gateway",
+          "parameters": null,
+          "requestBody": true,
+          "responses": {
+            "204": null,
+            "307": null,
+            "308": null,
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": null,
+            "411": null,
+            "413": null,
+            "415": null,
+            "429": null,
+            "500": null,
+            "503": null,
+            "default": null
+          }
+        }
+      },
+      "/deliver-report": {
+        "post": {
+          "summary": "deliver status report to NON-3GPP Message Gateway",
+          "parameters": null,
+          "requestBody": true,
+          "responses": {
+            "204": null,
+            "307": null,
+            "308": null,
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": null,
+            "411": null,
+            "413": null,
+            "415": null,
+            "429": null,
+            "500": null,
+            "503": null,
+            "default": null
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oAuth2ClientCredentials": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "{tokenUrl}",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  },
+  "TS29518_Namf_AIoT.yaml": {
+    "title": "Namf_AIoT",
+    "version": "1.0.0-alpha.2",
+    "description": "AMF AIoT Service.\n\u00a9 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n",
+    "servers": [
+      "{apiRoot}/namf-aiot/v1"
+    ],
+    "tags": [],
+    "paths": {
+      "/transfer": {
+        "post": {
+          "summary": "Request to transfer AIoT data towards NG-RAN or AIoT devices.",
+          "parameters": null,
+          "requestBody": true,
+          "responses": {
+            "204": null,
+            "307": null,
+            "308": null,
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": null,
+            "411": null,
+            "413": null,
+            "415": null,
+            "429": null,
+            "500": null,
+            "502": null,
+            "503": null,
+            "default": null
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oAuth2ClientCredentials": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "{nrfApiRoot}/oauth2/token",
+            "scopes": {
+              "namf-aiot": "Access to the Namf_AIoT API."
+            }
+          }
+        }
+      }
+    }
+  },
+  "TS29591_Nnef_DNAIMapping.yaml": {
+    "title": "Nnef_DNAIMapping",
+    "version": "1.1.0-alpha.3",
+    "description": "NEF DNAI Mapping Service.  \n\u00a9 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+    "servers": [
+      "{apiRoot}/nnef-dnai-mapping/v1"
+    ],
+    "tags": [],
+    "paths": {
+      "/subscriptions": {
+        "post": {
+          "summary": "subscribe to notifications",
+          "parameters": null,
+          "requestBody": true,
+          "responses": {
+            "201": {
+              "$ref": "TS29522_DNAIMapping.yaml#/components/schemas/DnaiMapSub"
+            },
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": null,
+            "411": null,
+            "413": null,
+            "415": null,
+            "429": null,
+            "500": null,
+            "502": null,
+            "503": null,
+            "default": null
+          }
+        }
+      },
+      "/subscriptions/{subscriptionId}": {
+        "get": {
+          "summary": "retrieve subscription",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "in": "path",
+              "description": "Subscription ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": false,
+          "responses": {
+            "200": {
+              "$ref": "TS29522_DNAIMapping.yaml#/components/schemas/DnaiMapSub"
+            },
+            "307": null,
+            "308": null,
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": null,
+            "406": null,
+            "429": null,
+            "500": null,
+            "502": null,
+            "503": null,
+            "default": null
+          }
+        },
+        "delete": {
+          "summary": "unsubscribe from notifications",
+          "parameters": [
+            {
+              "name": "subscriptionId",
+              "in": "path",
+              "description": "Subscription ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": false,
+          "responses": {
+            "204": null,
+            "307": null,
+            "308": null,
+            "400": null,
+            "401": null,
+            "403": null,
+            "404": null,
+            "429": null,
+            "500": null,
+            "502": null,
+            "503": null,
+            "default": null
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oAuth2ClientCredentials": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "{nrfApiRoot}/oauth2/token",
+            "scopes": {
+              "nnef-dnai-mapping": "Access to the Nnef_DNAIMapping API"
+            }
+          }
+        }
+      }
+    }
+  }
+}
